@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "532484179532",
+    "project_id": "travelhelper-c35e0",
+    "storage_bucket": "travelhelper-c35e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532484179532:android:3b1971566c9a4a2620d6e9",
+        "android_client_info": {
+          "package_name": "com.example.travelhelperapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532484179532-lg2pm89hehmeg1eai7pnlrlb166niecm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAK9J_5Qs1HRSOoaSXxxsRdgbcwJc09B8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532484179532-lg2pm89hehmeg1eai7pnlrlb166niecm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

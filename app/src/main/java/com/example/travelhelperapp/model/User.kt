@@ -1,4 +1,4 @@
-package com.example.travelhelperapp.Model
+package com.example.travelhelperapp.model
 
 data class User (
     var fullname: String,

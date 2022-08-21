@@ -1,4 +1,4 @@
-package com.example.travelhelperapp.LoginActivity
+package com.example.travelhelperapp.loginActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.travelhelperapp.R
-import com.example.travelhelperapp.Model.User
+import com.example.travelhelperapp.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase

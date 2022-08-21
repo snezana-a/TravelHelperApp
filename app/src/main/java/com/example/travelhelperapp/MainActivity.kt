@@ -1,13 +1,10 @@
 package com.example.travelhelperapp
 
 import android.content.Intent
-import android.media.Image
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.travelhelperapp.LoginActivity.LoginUser
+import com.example.travelhelperapp.loginActivity.LoginUser
 
 class MainActivity : AppCompatActivity() {
 

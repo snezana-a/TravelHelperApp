@@ -1,4 +1,4 @@
-package com.example.travelhelperapp.LoginActivity
+package com.example.travelhelperapp.loginActivity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.travelhelperapp.R
-import com.example.travelhelperapp.Model.User
+import com.example.travelhelperapp.model.User
+import com.example.travelhelperapp.travelPlacesActivity.TravelPlaceActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -25,6 +26,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var email: TextView
     private lateinit var fullName: TextView
     private lateinit var age: TextView
+    private lateinit var seePlaces: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,6 +48,11 @@ class ProfileActivity : AppCompatActivity() {
         fullName = findViewById(R.id.fullNameTitle)
         age = findViewById(R.id.ageTitle)
         greeting = findViewById(R.id.greetingTitle)
+        seePlaces = findViewById(R.id.seePlacesButton)
+
+        seePlaces.setOnClickListener {
+            startActivity(Intent(this, TravelPlaceActivity::class.java))
+        }
 
         reference.child(userId).addListenerForSingleValueEvent (object : ValueEventListener {
 

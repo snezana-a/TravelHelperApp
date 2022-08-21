@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Travel Helper</string>
+    <string-array name="travelPlaces">
+
+    </string-array>
 </resources>

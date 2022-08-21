@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.travelhelperapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,18 +14,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelHelperApp"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".LoginActivity.ForgotPassword"
+            android:name=".travelPlacesActivity.TravelPlaceActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity.ProfileActivity"
+            android:name=".loginActivity.ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity.RegisterUser"
+            android:name=".loginActivity.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity.LoginUser"
+            android:name=".loginActivity.RegisterUser"
+            android:exported="false" />
+        <activity
+            android:name=".loginActivity.LoginUser"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

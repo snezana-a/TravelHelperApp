@@ -1,4 +1,4 @@
-package com.example.travelhelperapp.LoginActivity
+package com.example.travelhelperapp.loginActivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

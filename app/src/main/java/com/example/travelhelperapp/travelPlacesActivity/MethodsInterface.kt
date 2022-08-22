@@ -8,7 +8,6 @@ import retrofit2.http.Query
 
 interface MethodsInterface {
 
-//    @GET("api/users?page=2")
-    @GET("locations/search?query=ohrid&limit=30&offset=0&units=km&location_id=1&currency=EUR&sort=relevance&lang=en_US")
-    fun getAllData(): Call<TravelPlace>
+    @GET("locations/search")
+    fun getAllData(@Query("query") name: String): Call<TravelPlace>
 }

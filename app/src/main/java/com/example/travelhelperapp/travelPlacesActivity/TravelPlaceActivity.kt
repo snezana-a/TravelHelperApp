@@ -4,35 +4,46 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.travelhelperapp.R
+import com.example.travelhelperapp.adapter.TravelAdapter
 import com.example.travelhelperapp.travelPlacesActivity.models.Data
 import com.example.travelhelperapp.travelPlacesActivity.models.TravelPlace
 import okhttp3.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.ArrayList
+import kotlin.collections.ArrayList
 
 class TravelPlaceActivity : AppCompatActivity() {
 
     private lateinit var searchButton: Button
     private lateinit var result: TextView
+    private lateinit var searchBar: EditText
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: TravelAdapter
+    private lateinit var travelPlaceList: List<Data>
+
     private val TAG: String = "TravelPlaceActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_travel_place)
 
+        recyclerView = findViewById(R.id.recyclerViewId)
+        recyclerView.layoutManager = LinearLayoutManager(this@TravelPlaceActivity)
+        recyclerView.setHasFixedSize(true)
+
         searchButton = findViewById(R.id.searchButton)
         result = findViewById(R.id.result)
+        searchBar = findViewById(R.id.searchBar)
+        travelPlaceList = mutableListOf()
+
+
 
         searchButton.setOnClickListener {
             val httpClient: OkHttpClient.Builder = OkHttpClient.Builder()
-            /*val mediaType: MediaType? = "application/json".toMediaTypeOrNull()
-            val body: RequestBody = RequestBody.create(mediaType, "{\r" +
-                    "\"query\": \"skopje\",\r" +
-                    "\"updateToken\": \"\"\r}")*/
             httpClient.addInterceptor(Interceptor { chain ->
                 val original: Request = chain.request()
 
@@ -54,7 +65,7 @@ class TravelPlaceActivity : AppCompatActivity() {
                 .build()
 
         val methods: MethodsInterface = retrofit.create(MethodsInterface::class.java)
-            val call: Call<TravelPlace> = methods.getAllData()
+            val call: Call<TravelPlace> = methods.getAllData(searchBar.text.toString())
             call.enqueue(object : retrofit2.Callback<TravelPlace> {
                 override fun onResponse(
                     call: Call<TravelPlace>,
@@ -63,6 +74,8 @@ class TravelPlaceActivity : AppCompatActivity() {
                     Log.e(TAG, "onResponse: code: " + response.code())
 
                     val data: ArrayList<Data>? = response.body()?.data
+                    travelPlaceList = response.body()?.data!!
+                    adapter.setData(travelPlaceList)
 
                     if (data != null) {
                         for (data1: Data in data) {
@@ -77,7 +90,11 @@ class TravelPlaceActivity : AppCompatActivity() {
 
             })
         }
-    }
 
+        adapter = TravelAdapter(applicationContext, travelPlaceList)
+        recyclerView.adapter = adapter
+        adapter.notifyDataSetChanged()
+
+    }
 
 }

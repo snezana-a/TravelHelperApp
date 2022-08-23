@@ -3,19 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/btn_bg.xml" value="0.1245" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/card_bg.xml" value="0.1135" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_baseline_airplanemode_active_24.xml" value="0.1105" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.2595" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_brightness_2_white_24dp.xml" value="0.1135" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_facebook.xml" value="0.1245" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_launcher_background (1).xml" value="0.1245" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2595" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_mediamodifier_design.xml" value="0.2595" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_search_gray_24dp.xml" value="0.1135" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/ic_travelhelper.xml" value="0.2595" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/drawable/search_input_style.xml" value="0.1135" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.2" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_home.xml" value="0.264" />
-        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_login_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_login_user.xml" value="0.2" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_register_user.xml" value="0.264" />
-        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_travel_place.xml" value="0.25" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/activity_travel_place.xml" value="0.2" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/recycler_row_list.xml" value="0.264" />
-        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/row_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/layout/row_layout.xml" value="0.264" />
         <entry key="..\:/Users/Sneze/AndroidStudioProjects/TravelHelperApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.108" />
       </map>
     </option>

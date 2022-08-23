@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
+import android.view.WindowManager
 import android.widget.*
 import com.example.travelhelperapp.R
 import com.google.firebase.auth.FirebaseAuth
@@ -29,6 +30,7 @@ class LoginUser : AppCompatActivity() {
         setContentView(R.layout.activity_login_user)
 
         supportActionBar?.hide()
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         email = findViewById(R.id.emailLogin)
         password = findViewById(R.id.passwordLogin)

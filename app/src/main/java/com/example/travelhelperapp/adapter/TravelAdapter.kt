@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.travelhelperapp.R
@@ -21,8 +22,9 @@ class TravelAdapter(applicationContext: Context, data: List<Data>?) : RecyclerVi
 
     override fun onBindViewHolder(holder: TravelAdapter.MyViewHolder, position: Int) {
         holder.textViewName.text = travelPlaceList[position].result_object.name
-        holder.textViewDesc.text = travelPlaceList[position].result_object.description
+        holder.textViewAddress.text = travelPlaceList[position].result_object.address
         holder.textViewRating.text = travelPlaceList[position].result_object.rating
+//        holder.imageView.setImageResource(travelPlaceList[position].result_object.photo.images.thumbnail.url)
     }
 
     override fun getItemCount(): Int {
@@ -30,9 +32,10 @@ class TravelAdapter(applicationContext: Context, data: List<Data>?) : RecyclerVi
     }
 
     class MyViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var textViewName: TextView = view.findViewById(R.id.textViewName)
-        var textViewDesc: TextView = view.findViewById(R.id.textViewDesc)
-        var textViewRating: TextView = view.findViewById(R.id.textViewRating)
+        var textViewName: TextView = view.findViewById(R.id.titleView)
+        var textViewAddress: TextView = view.findViewById(R.id.addressView)
+        var textViewRating: TextView = view.findViewById(R.id.ratingView)
+        var imageView: ImageView = view.findViewById(R.id.imageView)
 
     }
 

@@ -17,13 +17,13 @@ class RegisterUser : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
 
-    private lateinit var appTitle: TextView
     private lateinit var fullName: EditText
     private lateinit var age: EditText
     private lateinit var email: EditText
     private lateinit var password: EditText
     private lateinit var registerButton: Button
     private lateinit var progressBarRegister: ProgressBar
+    private lateinit var alreadyHaveAccount: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,22 +31,20 @@ class RegisterUser : AppCompatActivity() {
 
         mAuth = Firebase.auth
 
-        appTitle = findViewById(R.id.appTitleRegister)
-
         fullName = findViewById(R.id.fullNameRegister)
-        age = findViewById(R.id.ageRegister)
         email = findViewById(R.id.emailRegister)
         password = findViewById(R.id.passwordRegister)
 
         registerButton = findViewById(R.id.registerButton)
         progressBarRegister = findViewById(R.id.progressBarRegister)
+        alreadyHaveAccount = findViewById(R.id.alreadyHaveAccount)
+
+        alreadyHaveAccount.setOnClickListener {
+            startActivity(Intent(this, LoginUser::class.java))
+        }
 
         registerButton.setOnClickListener {
             registerUser()
-        }
-
-        appTitle.setOnClickListener {
-            startActivity(Intent(this, LoginUser::class.java))
         }
 
     }
@@ -61,12 +59,6 @@ class RegisterUser : AppCompatActivity() {
         if (fullNameValue.isEmpty()) {
             fullName.error = "Full name is required!"
             fullName.requestFocus()
-            return
-        }
-
-        if (ageValue.isEmpty()) {
-            age.error = "Age is required!"
-            age.requestFocus()
             return
         }
 
@@ -120,44 +112,3 @@ class RegisterUser : AppCompatActivity() {
     }
 
 }
-
-/*override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
-
-    mAuth = Firebase.auth
-}
-
-override fun onStart() {
-    super.onStart()
-    val currentUser = mAuth.currentUser
-    if (currentUser != null) {
-        reload()
-    }
-}
-
-private fun createAccount (email: String, password: String) {
-    mAuth.createUserWithEmailAndPassword(email, password)
-        .addOnCompleteListener(this) { task ->
-            if(task.isSuccessful) {
-                Log.d(TAG, "createUserWithEmail:success")
-                val user = mAuth.currentUser
-                updateUI(user)
-            } else {
-                Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
-                updateUI(null)
-            }
-        }
-}
-
-private fun updateUI(user: FirebaseUser?) {
-
-}
-
-private fun reload() {
-
-}
-
-companion object {
-    private const val TAG = "EmailPassword"
-}*/

@@ -22,10 +22,8 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var reference: DatabaseReference
     private lateinit var userId: String
 
-    private lateinit var greeting: TextView
     private lateinit var email: TextView
     private lateinit var fullName: TextView
-    private lateinit var age: TextView
     private lateinit var seePlaces: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,8 +44,6 @@ class ProfileActivity : AppCompatActivity() {
 
         email = findViewById(R.id.emailTitle)
         fullName = findViewById(R.id.fullNameTitle)
-        age = findViewById(R.id.ageTitle)
-        greeting = findViewById(R.id.greetingTitle)
         seePlaces = findViewById(R.id.seePlacesButton)
 
         seePlaces.setOnClickListener {
@@ -62,12 +58,9 @@ class ProfileActivity : AppCompatActivity() {
                 if (userProfile != null) {
                     val fullNameValue: String = userProfile.fullname
                     val emailValue: String = userProfile.email
-                    val ageValue: String = userProfile.age
 
-                    greeting.text = "Welcome, $fullNameValue!"
                     fullName.text = fullNameValue
                     email.text = emailValue
-                    age.text = ageValue
                 }
             }
 

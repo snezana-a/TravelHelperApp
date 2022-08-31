@@ -10,8 +10,8 @@
 
     <RelativeLayout
         android:id="@+id/container"
-        android:layout_width="381dp"
-        android:layout_height="221dp"
+        android:layout_width="347dp"
+        android:layout_height="161dp"
         android:layout_marginStart="24dp"
         android:background="@drawable/card_bg"
         android:paddingBottom="16dp"
@@ -22,7 +22,7 @@
 
         <TextView
 
-            android:id="@+id/titleView"
+            android:id="@+id/detailsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -33,20 +33,19 @@
             android:layout_marginTop="20dp"
             android:text="Simple Title Text "
             android:textColor="@color/title_text_color"
-            android:textStyle="bold"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/addressView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/titleView"
-            android:layout_alignStart="@+id/titleView"
-            android:layout_alignLeft="@id/titleView"
+            android:layout_below="@id/detailsName"
+            android:layout_alignStart="@+id/detailsName"
+            android:layout_alignLeft="@id/detailsName"
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
             android:lineSpacingExtra="8dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
             android:textColor="@color/content_text_color" />
 
         <TextView

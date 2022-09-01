@@ -113,6 +113,8 @@ class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
 
         intent.putExtra("IMAGE", travelPlaceList[position].result_object.photo.images.large.url)
         intent.putExtra("NAME", travelPlaceList[position].result_object.name)
+        intent.putExtra("LAT", travelPlaceList[position].result_object.latitude)
+        intent.putExtra("LNG", travelPlaceList[position].result_object.longitude)
 
         startActivity(intent)
     }

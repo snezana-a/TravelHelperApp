@@ -9,6 +9,10 @@ import android.widget.Toast
 import com.example.travelhelperapp.R
 import com.example.travelhelperapp.model.User
 import com.example.travelhelperapp.travelPlacesActivity.TravelPlaceActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
@@ -34,8 +38,9 @@ class ProfileActivity : AppCompatActivity() {
         mAuth = FirebaseAuth.getInstance()
 
         logout.setOnClickListener {
-            mAuth.signOut()
-            startActivity(Intent(this, LoginUser::class.java))
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(applicationContext, LoginUser::class.java)
+            startActivity(intent)
         }
 
         user = mAuth.currentUser!!
@@ -45,6 +50,17 @@ class ProfileActivity : AppCompatActivity() {
         email = findViewById(R.id.emailTitle)
         fullName = findViewById(R.id.fullNameTitle)
         seePlaces = findViewById(R.id.seePlacesButton)
+
+        var account: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(this)
+
+        if (account != null) {
+            var name: String? = account.displayName
+            var mail: String? = account.email
+
+            fullName.text = name
+            email.text = mail
+        }
+
 
         seePlaces.setOnClickListener {
             startActivity(Intent(this, TravelPlaceActivity::class.java))
@@ -66,7 +82,6 @@ class ProfileActivity : AppCompatActivity() {
 
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@ProfileActivity, "Something went wrong!", Toast.LENGTH_LONG).show()
-
             }
         })
     }

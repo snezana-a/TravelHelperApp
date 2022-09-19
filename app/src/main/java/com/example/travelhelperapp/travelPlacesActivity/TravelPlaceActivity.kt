@@ -96,7 +96,6 @@ class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
                         override fun onFailure(call: Call<TravelPlace>, t: Throwable) {
                             Log.e(TAG, "onFailure: " + t.message )
                         }
-
                     })
                     return true
                 }

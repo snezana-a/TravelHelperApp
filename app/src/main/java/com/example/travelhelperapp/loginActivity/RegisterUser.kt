@@ -8,6 +8,12 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.travelhelperapp.R
 import com.example.travelhelperapp.model.User
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.FirebaseDatabase
@@ -24,6 +30,7 @@ class RegisterUser : AppCompatActivity() {
     private lateinit var registerButton: Button
     private lateinit var progressBarRegister: ProgressBar
     private lateinit var alreadyHaveAccount: TextView
+    private lateinit var registerGoogle: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +53,6 @@ class RegisterUser : AppCompatActivity() {
         registerButton.setOnClickListener {
             registerUser()
         }
-
     }
 
     private fun registerUser() {
@@ -110,5 +116,4 @@ class RegisterUser : AppCompatActivity() {
                 }
             }
     }
-
 }

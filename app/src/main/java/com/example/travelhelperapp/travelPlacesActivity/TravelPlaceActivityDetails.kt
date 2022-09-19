@@ -9,13 +9,20 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.example.travelhelperapp.R
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class TravelPlaceActivityDetails : AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var details: TextView
     private lateinit var image: String
-    private lateinit var mapsButton: Button
+    lateinit var googleMap: GoogleMap
+    lateinit var mapFragment: SupportMapFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +30,6 @@ class TravelPlaceActivityDetails : AppCompatActivity() {
 
         imageView = findViewById(R.id.detailsImage)
         details = findViewById(R.id.detailsName)
-        mapsButton = findViewById(R.id.mapsButton)
-
-        val fragment: Fragment = MapFragment()
 
         image = intent.getStringExtra("IMAGE")!!
         Glide.with(applicationContext)
@@ -36,23 +40,13 @@ class TravelPlaceActivityDetails : AppCompatActivity() {
 
         details.text = intent.extras?.getString("NAME")
 
-        mapsButton.setOnClickListener {
-            val mapIntent = Intent(this@TravelPlaceActivityDetails, MapsActivity::class.java)
+        mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(OnMapReadyCallback {
+            googleMap = it
 
-            mapIntent.putExtra("LAT", intent.getStringExtra("LAT"))
-            mapIntent.putExtra("LNG", intent.getStringExtra("LNG"))
-            mapIntent.putExtra("NAME", intent.getStringExtra("NAME"))
-
-            startActivity(mapIntent)
-        }
-
-/*
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.frame_layout, fragment)
-            .commit()*/
-
+            val location1 = LatLng(intent.getStringExtra("LAT")!!.toDouble(), intent.getStringExtra("LNG")!!.toDouble())
+            googleMap.addMarker(MarkerOptions().position(location1).title("Object Location"))
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location1, 10f))
+        })
     }
-
-
 }

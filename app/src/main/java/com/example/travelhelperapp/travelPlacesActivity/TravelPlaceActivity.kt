@@ -23,13 +23,11 @@ import kotlin.collections.ArrayList
 
 class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
 
-    private lateinit var searchButton: Button
-    private lateinit var result: TextView
     private lateinit var searchBar: EditText
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: TravelAdapter
     private lateinit var travelPlaceList: List<Data>
-    private lateinit var progressBarTravel: ProgressBar
+    private lateinit var progressBar: ProgressBar
 
     private val TAG: String = "TravelPlaceActivity"
 
@@ -41,11 +39,11 @@ class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
         recyclerView.layoutManager = LinearLayoutManager(this@TravelPlaceActivity)
         recyclerView.setHasFixedSize(true)
 
-//        searchButton = findViewById(R.id.searchButton)
         searchBar = findViewById(R.id.searchBar)
+        progressBar = findViewById(R.id.progressBarTravelPlace)
         travelPlaceList = mutableListOf()
 
-//        progressBarTravel = findViewById(R.id.progressBarTravel)
+        progressBar = findViewById(R.id.progressBarTravelPlace)
 
         searchBar.setOnKeyListener(object : View.OnKeyListener {
             override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
@@ -71,6 +69,8 @@ class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
                         .client(client)
                         .build()
 
+                    progressBar.visibility = View.VISIBLE
+
                     val methods: MethodsInterface = retrofit.create(MethodsInterface::class.java)
                     val call: Call<TravelPlace> = methods.getAllData(searchBar.text.toString())
                     call.enqueue(object : retrofit2.Callback<TravelPlace> {
@@ -89,6 +89,8 @@ class TravelPlaceActivity : AppCompatActivity() , RecyclerViewInterface {
                                     Log.e(TAG, "onResponse: name : " + data1.result_object.name);
                                 }
                             }
+
+                            progressBar.visibility = View.GONE
                         }
 
                         override fun onFailure(call: Call<TravelPlace>, t: Throwable) {

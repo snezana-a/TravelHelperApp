@@ -25,9 +25,6 @@ class TravelAdapter(val applicationContext: Context, val data: List<Data>?, val 
         holder.textViewName.text = travelPlaceList[position].result_object.name
         holder.textViewAddress.text = travelPlaceList[position].result_object.address
         holder.textViewRating.text = travelPlaceList[position].result_object.rating
-//        Glide.with(applicationContext)
-//            .load(travelPlaceList[position].result_object.photo.images.thumbnail.url).placeholder(R.drawable.user)
-//            .error(R.drawable.aa).into(holder.imageView)
         holder.itemView.setOnClickListener {
             val pos: Int = holder.adapterPosition
 
@@ -45,10 +42,6 @@ class TravelAdapter(val applicationContext: Context, val data: List<Data>?, val 
         var textViewName: TextView = view.findViewById(R.id.detailsName)
         var textViewAddress: TextView = view.findViewById(R.id.addressView)
         var textViewRating: TextView = view.findViewById(R.id.ratingView)
-//        var imageView: ImageView = view.findViewById(R.id.placeImage)
-        var itemView: RelativeLayout = view.findViewById(R.id.container)
-
-
     }
 
     fun setData(newList: List<Data>) {

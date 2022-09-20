@@ -1,6 +1,10 @@
 package com.example.travelhelperapp.travelPlacesActivity
 
+import android.app.UiModeManager
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +19,7 @@ import com.example.travelhelperapp.adapter.RecyclerViewInterface
 import com.example.travelhelperapp.adapter.TravelAdapter
 import com.example.travelhelperapp.travelPlacesActivity.models.Data
 import com.example.travelhelperapp.travelPlacesActivity.models.TravelPlace
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import okhttp3.*
 import retrofit2.Call
 import retrofit2.Retrofit

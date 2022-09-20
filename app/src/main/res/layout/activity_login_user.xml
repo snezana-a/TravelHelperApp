@@ -107,7 +107,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont have an Account?"
+            android:text="Dont have an Account? "
             android:textColor="@color/colorWhite" />
 
         <TextView

@@ -35,15 +35,12 @@
             android:value="AIzaSyBBjVGvDcgOqRjYiHc1fe9s0gq2ERrWCWM" />
 
         <activity
-            android:name=".travelPlacesActivity.MapsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_maps" />
-        <activity
             android:name=".travelPlacesActivity.TravelPlaceActivityDetails"
             android:exported="false" />
         <activity
             android:name=".travelPlacesActivity.TravelPlaceActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="uiMode"/>
         <activity
             android:name=".loginActivity.ForgotPassword"
             android:exported="false" />

@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Travel Helper</string>
-    <string-array name="travelPlaces">
-
-    </string-array>
+    <string-array name="travelPlaces" />
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="night_mode_off">NIGHT MODE OFF</string>
+    <string name="night_mode_on">NIGHT MODE ON</string>
 </resources>

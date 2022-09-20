@@ -1,9 +1,11 @@
 package com.example.travelhelperapp.loginActivity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.travelhelperapp.R
@@ -29,6 +31,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var email: TextView
     private lateinit var fullName: TextView
     private lateinit var seePlaces: Button
+    private lateinit var profilePhoto: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +53,7 @@ class ProfileActivity : AppCompatActivity() {
         email = findViewById(R.id.emailTitle)
         fullName = findViewById(R.id.fullNameTitle)
         seePlaces = findViewById(R.id.seePlacesButton)
+        profilePhoto = findViewById(R.id.profilePhoto)
 
         var account: GoogleSignInAccount? = GoogleSignIn.getLastSignedInAccount(this)
 
